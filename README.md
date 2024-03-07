@@ -16,20 +16,6 @@ Nesta segunda etapa do Projeto Integrador, elaboramos protótipos das interfaces
 
 <br>
 
-## Telas 
-### Aluno
-- Cadastro-Aluno: Solicita dados importantes para o cadastro no sistema.
-- Login-Aluno: Página inicial que mostra a solicitação de email e senha para acesso a Área do Aluno.
-- Area-Aluno: Acesso a documentos, cursos e matrícula.
-### Professor
-- Cadastro-Professor: Solicita dados para o Professor ser cadastrado no sistema.
-### Fornecedor
-- Cadastro-Fornecedor: Solicita dados para o Fornecedor ser cadastrado no sistema.
-### Gestor
-- Login-Gestor: Solicita email e senha para acesso.
-- Painel-Controle: Acesso aos dados cadastrais de alunos, professores, funcionários e fornecedores. Além de informações de contratos, relatórios e contato direto com o suporte.
-
-<br>
 
 ## Casos de Uso
 ![Diagrama de Casos de Uso](Caso-de-uso.png)
@@ -164,7 +150,22 @@ Pós-condição: O sistema registra a não conformidade, notifica o fornecedor e
 ## Diagrama de Classes
 ![Diagrama de Classes](Diagrama-de-classe.png)
 
+<br>
 
+## Telas 
+### Aluno
+- Cadastro-Aluno: Solicita dados importantes para o cadastro no sistema.
+- Login-Aluno: Página inicial que mostra a solicitação de email e senha para acesso a Área do Aluno.
+- Area-Aluno: Acesso a documentos, cursos e matrícula.
+### Professor
+- Cadastro-Professor: Solicita dados para o Professor ser cadastrado no sistema.
+### Fornecedor
+- Cadastro-Fornecedor: Solicita dados para o Fornecedor ser cadastrado no sistema.
+### Gestor
+- Login-Gestor: Solicita email e senha para acesso.
+- Painel-Controle: Acesso aos dados cadastrais de alunos, professores, funcionários e fornecedores. Além de informações de contratos, relatórios e contato direto com o suporte.
+
+<br>
 
 > [!NOTE]
 > Documentação em andamento...
