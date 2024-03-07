@@ -1,21 +1,18 @@
-# PROJETO INTEGRADOR III: DESENVOLVIMENTO DE SISTEMAS ORIENTADO À OBJETOS <br>
+# PROJETO INTEGRADOR III: DESENVOLVIMENTO DE SISTEMAS ORIENTADO À OBJETOS
 
 
 ## Sistema de Cadastro de um Centro Universitário
-
 <br>
 
 ### Integrantes do Grupo
 - Andreza Azevedo Gomes de Freitas
 - Lucas Vieira Rocha
-
 <br>
 
 ### Resumo
 Na primeira fase deste trabalho, apresentamos uma abordagem minuciosa da modelagem de um sistema de gestão de dados em um centro universitário, utilizando a Linguagem de Modelagem Unificada (UML). O foco foi na elaboração de um Diagrama de Casos de Uso que evidencia as principais interações entre os usuários e o sistema, seguido pela descrição dos cenários associados a cada caso de uso. Adicionalmente, introduzimos um Diagrama de Classes que representa a estrutura estática do sistema, identificando as classes principais e seus relacionamentos.
 
 Nesta segunda etapa do Projeto Integrador, elaboramos protótipos das interfaces de cadastro de uma universidade fictícia denominada PrimeTech, utilizando a ferramenta Figma. Estes protótipos têm como objetivo demonstrar de forma prática a visualização das interfaces que serão empregadas pelos usuários no sistema final.
-
 
 <br>
 
@@ -37,12 +34,14 @@ Nesta segunda etapa do Projeto Integrador, elaboramos protótipos das interfaces
 ## Casos de Uso
 ![Diagrama de Casos de Uso](Caso-de-uso.png)
 
+<br>
+
 ## Descrição dos Cenários
 <br>
 
 **1 - REALIZAR MATRÍCULA (Pessoa Física);**
 
-*CENÁRIO PRINCIPAL*
+ *CENÁRIO PRINCIPAL*
 
 Ator: Pessoa física (aluno ou responsável)
 
@@ -52,13 +51,13 @@ Descrição: O ator seleciona a opção de realizar matrícula no sistema, forne
 
 Pós-condição: O sistema exibe uma mensagem que a matrícula foi registrada com sucesso. O ator pode visualizar as informações da matrícula, incluindo detalhes do curso. 
 
-*CENÁRIO ALTERNATIVO 1 - CANCELAR MATRÍCULA:*
+ *CENÁRIO ALTERNATIVO 1 - CANCELAR MATRÍCULA:*
 
 Descrição: O ator opta por cancelar a matrícula durante o processo de registro.
 
 Pós-condição: O processo de matrícula é cancelado, e nenhuma informação é registrada.
 
-*CENÁRIO ALTERNATIVO 2 - DADOS INCOMPLETOS:*
+ *CENÁRIO ALTERNATIVO 2 - DADOS INCOMPLETOS:*
 
 Descrição: O ator não fornece todas as informações obrigatórias durante o registro de matrícula.
 
@@ -159,6 +158,8 @@ Pós-condição: O sistema notifica automaticamente o responsável pelo pedido s
 Descrição: Os materiais fornecidos não atendem às especificações do pedido.
 
 Pós-condição: O sistema registra a não conformidade, notifica o fornecedor e o responsável pelo pedido. O status do pedido é atualizado para refletir a situação, e são iniciadas as ações corretivas necessárias.
+
+<br>
 
 ## Diagrama de Classes
 ![Diagrama de Classes](Diagrama-de-classe.png)
