@@ -1,208 +1,160 @@
-# PROJETO INTEGRADOR III: DESENVOLVIMENTO DE SISTEMAS ORIENTADO À OBJETOS
+# 📘 PROJETO INTEGRADOR III: DESENVOLVIMENTO DE SISTEMAS ORIENTADO À OBJETOS
 
 
-## Sistema de Cadastro de um Centro Universitário
+## 🎓 Sistema de Cadastro de um Centro Universitário
 <br>
 
-### Integrantes do Grupo
-- Andreza Azevedo Gomes de Freitas
-- Lucas Vieira Rocha
+### 🧾 Descrição
+
+Este projeto tem como objetivo o desenvolvimento de um sistema de gestão para um centro universitário, com foco na orientação a objetos e na modelagem utilizando a Linguagem de Modelagem Unificada **(UML)**.
+
+Na **primeira fase**, realizamos:
+- Elaboração do **Diagrama de Casos de Uso**, representando as principais interações dos usuários com o sistema;
+- Descrição detalhada dos **cenários de uso**, incluindo fluxos principais e alternativos;
+- Criação do **Diagrama de Classes**, que evidencia a estrutura estática do sistema.
+
+Na **segunda fase**, desenvolvemos:
+- Protótipos das interfaces do sistema utilizando a ferramenta **Figma**, para uma universidade fictícia chamada **PrimeTech**;
+- Telas voltadas para alunos, gestores, professores e fornecedores.
+
 <br>
 
-### Resumo
-Na primeira fase deste trabalho, apresentamos uma abordagem minuciosa da modelagem de um sistema de gestão de dados em um centro universitário, utilizando a Linguagem de Modelagem Unificada (UML). O foco foi na elaboração de um Diagrama de Casos de Uso que evidencia as principais interações entre os usuários e o sistema, seguido pela descrição dos cenários associados a cada caso de uso. Adicionalmente, introduzimos um Diagrama de Classes que representa a estrutura estática do sistema, identificando as classes principais e seus relacionamentos.
 
-Nesta segunda etapa do Projeto Integrador, elaboramos protótipos das interfaces de cadastro de uma universidade fictícia denominada PrimeTech, utilizando a ferramenta Figma. Estes protótipos têm como objetivo demonstrar de forma prática a visualização das interfaces que serão empregadas pelos usuários no sistema final.
-
-<br>
-
-
-## Casos de Uso
+# 📌 Casos de Uso
 ![Diagrama de Casos de Uso](Caso-de-uso.png)
 
 <br>
 
-## Descrição dos Cenários
+## 📋 Descrição dos Cenários
 <br>
 
-**1 - REALIZAR MATRÍCULA (Pessoa Física);**
+#### 1. Realizar Matrícula (Pessoa Física)
 
- *CENÁRIO PRINCIPAL*
+**Cenário Principal**  
+- **Ator:** Pessoa física (aluno ou responsável)  
+- **Pré-condição:** Estar cadastrado no sistema  
+- **Fluxo:** Preenchimento dos dados e confirmação da matrícula  
+- **Pós-condição:** Matrícula registrada com sucesso  
 
-Ator: Pessoa física (aluno ou responsável)
+**Cenários Alternativos**  
+- **Cancelamento:** Matrícula cancelada antes da finalização  
+- **Dados Incompletos:** Sistema solicita preenchimento obrigatório
 
-Pré-condição: O ator está cadastrado no sistema.
+---
 
-Descrição: O ator seleciona a opção de realizar matrícula no sistema, fornece as informações necessárias, como dados pessoais, documentos, e confirma a matrícula.
+#### 2. Pagar Mensalidade (Alunos)
 
-Pós-condição: O sistema exibe uma mensagem que a matrícula foi registrada com sucesso. O ator pode visualizar as informações da matrícula, incluindo detalhes do curso. 
+**Cenário Principal**  
+- **Ator:** Aluno  
+- **Pré-condição:** Estar matriculado  
+- **Fluxo:** Escolher forma de pagamento e concluir a transação  
+- **Pós-condição:** Mensalidade marcada como "paga"  
 
- *CENÁRIO ALTERNATIVO 1 - CANCELAR MATRÍCULA:*
+**Cenários Alternativos**  
+- **Desistência:** Pagamento não concluído  
+- **Falha:** Erro durante o pagamento, status mantido como "pendente"
 
-Descrição: O ator opta por cancelar a matrícula durante o processo de registro.
+---
 
-Pós-condição: O processo de matrícula é cancelado, e nenhuma informação é registrada.
+#### 3. Avaliar Aluno (Professores)
 
- *CENÁRIO ALTERNATIVO 2 - DADOS INCOMPLETOS:*
+**Cenário Principal**  
+- **Ator:** Professor  
+- **Pré-condição:** Autenticado no sistema  
+- **Fluxo:** Inserção de notas e comentários  
+- **Pós-condição:** Avaliação registrada e visível ao aluno  
 
-Descrição: O ator não fornece todas as informações obrigatórias durante o registro de matrícula.
+**Cenários Alternativos**  
+- **Exclusão da Avaliação:** Professor remove avaliação  
+- **Aluno Inexistente:** Sistema não encontra o aluno informado
 
-Pós-condição: O sistema exibe uma mensagem de erro e solicita que o ator forneça as informações necessárias para concluir o registro.
+---
+
+#### 4. Realizar Contrato (Pessoa Jurídica)
+
+**Cenário Principal**  
+- **Ator:** Pessoa Jurídica  
+- **Pré-condição:** Estar cadastrada no sistema  
+- **Fluxo:** Fornecimento dos dados contratuais  
+- **Pós-condição:** Contrato registrado  
+
+**Cenários Alternativos**  
+- **Cancelamento:** Interrupção antes da finalização  
+- **Dados Incompletos:** Sistema exige preenchimento obrigatório
+
+---
+
+#### 5. Fornecer Materiais (Fornecedor)
+
+**Cenário Principal**  
+- **Ator:** Fornecedor  
+- **Pré-condição:** Cadastro e autorização no sistema  
+- **Fluxo:** Confirmação da entrega de materiais  
+- **Pós-condição:** Pedido atualizado como entregue  
+
+**Cenários Alternativos**  
+- **Atraso:** Sistema notifica o responsável pelo pedido  
+- **Materiais Incorretos:** Sistema registra não conformidade
 
 
-**2 - PAGAR MENSALIDADE (Alunos);**
-
-*CENÁRIO PRINCIPAL*
-
-Ator: Alunos
-Pré-condição: O aluno deve estar devidamente matriculado em um curso na instituição.
-
-Descrição: O aluno acessa a opção de pagamento da mensalidade. O sistema apresenta as opções de pagamento disponíveis, escolhe a forma de pagamento desejada, e efetua o pagamento.
-
-Pós-condição: O sistema confirma o pagamento e atualiza o status da mensalidade para "pago".
-
-*CENÁRIO ALTERNATIVO 1 – DESISTÊNCIA DO PAGAMENTO:*
-
-Descrição: O aluno interrompe o processo de pagamento.
-
-Pós-condição: A mensalidade permanece como pendente, e o aluno é informado sobre a falta de conclusão do pagamento.
-
-*CENÁRIO ALTERNATIVO 2 – FALHA NO PAGAMENTO:*
-
-Descrição: Durante o pagamento da mensalidade o sistema falhou por qualquer motivo.
-
-Pós-condição: O sistema notifica o aluno sobre a falha no pagamento, a mensalidade permanece como "pendente" se o aluno não concluir o pagamento com sucesso.
-
-**3 - AVALIAR ALUNO (Professores);**
-
-*CENÁRIO PRINCIPAL*
-
-Ator: Professores
-
-Pré-condição: O professor está devidamente autenticado no sistema como professor.
-
-Descrição: O professor acessa a área de avaliação de alunos no sistema, seleciona a turma e o aluno que deseja avaliar, insere as notas correspondentes e adiciona comentários específicos sobre o desempenho do aluno.
-
-Pós-condição: As notas são registradas para o aluno. O sistema atualiza automaticamente as informações, e o aluno pode visualizar as notas e os comentários através de sua conta no sistema.
-
-*CENÁRIO ALTERNATIVO 1 - EXCLUSÃO DE AVALIAÇÃO:*
-
-Descrição: O professor decide excluir completamente a avaliação para o aluno. O sistema exibe uma confirmação para a exclusão, o professor confirma a exclusão da avaliação.
-
-Pós-condição: A avaliação é excluída do sistema. O sistema exibe uma mensagem confirmando a exclusão, e as informações associadas ao aluno retornam ao estado anterior à avaliação.
-
-*CENÁRIO ALTERNATIVO 2 - ALUNO NÃO ENCONTRADO:*
-
-Descrição: O professor tenta registrar notas para um aluno que não está matriculado no sistema.
-
-Pós-condição: O sistema exibe uma mensagem informando que o aluno não foi encontrado.
-
-**4 - REALIZAR CONTRATO (Pessoa Jurídica);**
-
-*CENÁRIO PRINCIPAL*
-
-Ator: Pessoa Jurídica (exemplo: um funcionário autorizado)
-
-Pré-condição: O ator está cadastrado no sistema como Pessoa Jurídica
-
-Descrição: O ator acessa a opção de realizar contrato, fornece as informações necessárias, como detalhes do serviço ou produto contratado, termos e condições, e confirma a criação do contrato.
-
-Pós-condição: O sistema exibe uma mensagem confirmando que o contrato foi registrado com sucesso. As informações do contrato são armazenadas no sistema.
-
-*CENÁRIO ALTERNATIVO 1 – CANCELAR CONTRATO:*
-
-Descrição: O ator opta por cancelar o contrato durante o processo de criação.
-
-Pós-condição: O processo de criação do contrato é cancelado, e nenhuma informação é registrada.
-
-*CENÁRIO ALTERNATIVO 2 – DADOS INCOMPLETOS*
-
-Descrição: O ator não fornece todas as informações obrigatórias durante o processo de criação do contrato.
-
-Pós-condição: O sistema exibe uma mensagem de erro e solicita que o representante forneça as informações necessárias para concluir o registro do contrato.
-
-**5 - FORNECER MATERIAIS (Fornecedor);**
-
-*CENÁRIO PRINCIPAL*
-
-Ator: Fornecedor
-
-Pré-condição: O fornecedor está cadastrado e autorizado no sistema.
-
-Descrição: O fornecedor acessa a opção de fornecer materiais, seleciona o pedido correspondente, fornece as informações necessárias sobre a entrega, e confirma o fornecimento dos materiais.
-
-Pós-condição: O sistema confirma o fornecimento dos materiais, atualiza o status do pedido e armazena as informações da transação.
-
-*CENÁRIO ALTERNATIVO 1 – ATRASO NA ENTREGA:*
-
-Descrição: O fornecedor enfrenta atrasos na entrega dos materiais.
-
-Pós-condição: O sistema notifica automaticamente o responsável pelo pedido sobre o atraso. O status do pedido é atualizado para refletir o atraso na entrega.
-
-*CENÁRIO ALTERNATIVO 2 – MATERIAIS NÃO CONFORMES:*
-
-Descrição: Os materiais fornecidos não atendem às especificações do pedido.
-
-Pós-condição: O sistema registra a não conformidade, notifica o fornecedor e o responsável pelo pedido. O status do pedido é atualizado para refletir a situação, e são iniciadas as ações corretivas necessárias.
 
 <br>
 
-## Diagrama de Classes
+# 📐 Diagrama de Classes
 ![Diagrama de Classes](Diagrama-de-classe.png)
 
 <br>
 
-# Telas 
-## Aluno
-- Login do Aluno: Apresenta campos para inserção de email e senha, permitindo acesso à Área do Aluno. Também inclui um botão de 'CADASTRE-SE AGORA' para novos usuários que ainda não possuem cadastro na universidade.
- 
+# 💻 Telas do Sistema 
+## 👨‍🎓 Aluno
+- **Login do Aluno:** Apresenta campos para inserção de email e senha, permitindo acesso à Área do Aluno. Também inclui um botão de 'CADASTRE-SE AGORA' para novos usuários que ainda não possuem cadastro na universidade. 
 ![Tela Login Aluno](Tela-Login-Aluno.png)
 
 <br>
 
-- Cadastro-Aluno: Solicita os dados importantes para o cadastro no sistema.
-
+- **Cadastro-Aluno:** Solicita os dados importantes para o cadastro no sistema.
  ![Tela Cadastro Aluno](Tela-Cadastro-Aluno.png)
  
 <br>
 
-- Área-Aluno: Acesso a documentos, cursos e matrícula.
-
+- **Área-Aluno:** Acesso a documentos, cursos e matrícula.
 ![Tela Aluno](Tela-Aluno.png)
 
-<br>
+---
 
-## Gestor
-- Login-Gestor: Requer email e senha para autenticação, garantindo acesso restrito exclusivamente aos gestores do sistema.
-
+## 👨‍💼 Gestor
+- **Login-Gestor:** Requer email e senha para autenticação, garantindo acesso restrito exclusivamente aos gestores do sistema.
 ![Tela Login Gestão](Tela-Login-Gestão.png)
 
 <br>
 
-- Painel-Controle-Gestão: Permite acesso aos dados cadastrais de alunos, professores, funcionários e fornecedores. Além de fornecer informações sobre contratos, relatórios e contato direto com o suporte.
-
+- **Painel-Controle-Gestão:** Permite acesso aos dados cadastrais de alunos, professores, funcionários e fornecedores. Além de fornecer informações sobre contratos, relatórios e contato direto com o suporte.
  ![Tela Login Gestão](Painel-Gestor.png)
  
-<br>
+---
 
-## Professor
-- Cadastro-Professor: Solicita dados para o Professor ser cadastrado no sistema.
-
+## 👨‍🏫 Professor
+- **Cadastro-Professor:** Solicita dados para o Professor ser cadastrado no sistema.
 ![Tela Cadastro Professor](Tela-Cadastro-Professor.png)
 
-<br>
+---
 
-## Fornecedor
-- Cadastro-Fornecedor: Solicita dados para o Fornecedor ser cadastrado no sistema.
-
+## 🚚 Fornecedor
+- **Cadastro-Fornecedor:** Solicita dados para o Fornecedor ser cadastrado no sistema.
 ![Tela Cadastro Professor](Tela-Cadastro-Fornecedor.png)
 
+---
+
 <br>
 
+### 👥 Integrantes do Grupo
+- Andreza Azevedo Gomes de Freitas
+- Lucas Vieira Rocha
 
+<br>
 
-> [!NOTE]
-> Documentação em andamento...
+## 📜 Licença
+ Este projeto é de uso acadêmico e não possui uma licença pública definida. Caso queira utilizá-lo, consulte os autores para mais informações.
 
 
 
